@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="apple-touch-icon" sizes="76x76" href="account_css/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="account_css/img/favicon.png">
+        <title>
+            Dashboard
+        </title>
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Nucleo Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="account_css/css/nucleo-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+        <!-- CSS Files -->
+        <link href="account_css/css/black-dashboard.cssv=1.0.0.css" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="account_css/demo/demo.css" rel="stylesheet" />
+        
+        <link href="icofont.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="">
+        <div class="wrapper">
+            <div class="sidebar">
+                <!--
+Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+-->
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <a href="javascript:void(0)" class="simple-text logo-normal">
+                            <img src="assets/img/logo.png" style="width:150px; height:50px;" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li class=" ">
+                            <a href="/dashboard">
+                               <i class="bi bi-pie-chart"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/depositHistory/<%=user._id%>">
+                                <i class="bi bi-bookmark"></i>
+                                <p>Deposit history</p>
+                            </a>
+                        </li>
+                    <li>
+                        <a href="/buy-contract">
+                          <i class="bi bi-bar-chart"></i>
+                            <p>Buy contracts</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contracts/<%=user._id%>">
+                          <i class="bi bi-bookmark"></i>
+                            <p>Contracts</p>
+                        </a>
+                    </li>
+                        
+                        <li class="active">
+                            <a href="/deposit">
+                              <i class="bi bi-bank"></i>
+                                <p>Deposit</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/withdrawal">
+                              <i class="bi bi-coin"></i>
+                                <p>Withdrawal</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/widthdrawHistory/<%=user._id%>">
+                                <i class="bi bi-bookmark"></i>
+                                <p>Widthdraw history</p>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/profile">
+                              <i class="bi bi-person-circle"></i>
+                                <p>Profile</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logout">
+                              <i class="bi bi-power"></i>
+                                <p>Log out</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-panel">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+                    <div class="container-fluid">
+                        <div class="navbar-wrapper">
+                            <div class="navbar-toggle d-inline">
+                                <button type="button" class="navbar-toggler">
+                                    <span class="navbar-toggler-bar bar1"></span>
+                                    <span class="navbar-toggler-bar bar2"></span>
+                                    <span class="navbar-toggler-bar bar3"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="javascript:void(0)">Deposit</a>
+                        </div>
+                        
+                        <div class="collapse navbar-collapse" id="navigation">
+                            <ul class="navbar-nav ml-auto">
+                               
+                                <!-- <li class=" nav-item">
+                                    <a href="javascript:void()" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                        <div class="notification d-none d-lg-block d-xl-block"></div>
+                                        <i class="tim-icons icon-sound-wave"></i>
+                                        <p class="d-lg-none">
+                                            Notifications
+                                        </p>
+                                    </a>
+                                   
+                                </li> -->
+                                <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                        <div class="photo">
+                                            <img src="account_css/img/anime3.png" alt="Profile Photo">
+                                        </div>
+                                        <b class="caret d-none d-lg-block d-xl-block"></b>
+                                        <p class="d-lg-none">
+                                            Log out
+                                        </p>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-navbar">
+                                        <li class="nav-link"><a href="/profile" class="nav-item dropdown-item">Profile</a></li>
+                                        <li class="nav-link"><a href="/depositHistory/<%=user._id%>" class="nav-item dropdown-item">History</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li class="nav-link"><a href="/logout" class="nav-item dropdown-item">Log out</a></li>
+                                    </ul>
+                                </li>
+                                <li class="separator d-lg-none"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i class="tim-icons icon-simple-remove"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Navbar -->
+                <div class="content container">
+                    <div class="card">
+                        <!-- Start of card -->
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Deposit Panel</h4>
+                            <!-- <code>Note minimum deposit is 50.00</code> -->
+                            <p class="card-category"><%=user.firstname%><%=user.lastname%></p>
+                        </div>
+                        <!-- start card body -->
+                        <div class="card-body">
+                    <form action="/deposit/<%=user._id%>" method="post" autocomplete="off" id="withdrawal-form" class="was-validated" enctype="multipart/form-data">
+                       
+                        <div class="dropdown mb-3 mt-2">
+                          <label for="input" class="label mb-2 form-control">Payment Method</label>
+                          <select style="color:#000;" class="btn btn-secondary" name="type" id="type" class="" required>
+                              <option value="" style="background-color: white; color: azure;" class="form-control"><b>---Select Method---</b></option>
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="gcash">Gash</option>
+                            <option value="Usdt">Usdt</option>
+                            
+                          </select>
+                        </div>
+                   <div class="dropdown mb-3 mt-2" id="field1" style="display: None;">
+                    <label for="input" class="label mb-2">Bitcoin Wallet barcode</label><br>
+                    <img src="../wp-admin/uploads/btc20.jpeg" alt="bitcoin code" style="max-width:40%; padding-left:30px;">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field12" style="display: None;">
+                    <label for="input" class="label mb-2">copy BTC Wallet Address</label>
+                    <input style="background-color:white;"type="text" class="form-control"  id="myInput" disabled value="bc1qygh4gav33x6zkur3xpu075xg6f8gjjjv4efmml">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field2" style="display: None;">
+                    <label for="input" class="label mb-2">gcash name holder</label><br>
+                    <input style="background-color:white;"type="text" class="form-control" name="account_name"  id="account_name" disabled value="<%=user.account_name%>">
+                    <!-- <img src="../wp-admin/uploads/eth20.jpg" alt="bitcoin code" style="max-width:40%; padding-left:30px;"> -->
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field13" style="display: None;">
+                    <label for="input" class="label mb-2">Gcash account number</label>
+                    <input  style="background-color:white;" type="text" class="form-control" name="account_no" id="account_no" disabled value="<%=user.account_no%>">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field3" style="display: None;">
+                    <label for="input" class="label mb-2">Usdt Wallet Barcode</label><br>
+                    <img src="../wp-admin/uploads/usdt20.jpeg" alt="bitcoin code" style="max-width:40%; padding-left:30px;">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field14" style="display: None;">
+                    <label for="input" class="label mb-2">Usdt Wallet Address</label>
+                    <input  style="background-color:white;"type="text" class="form-control" disabled value="0xf8461E1A3a05534989f65C1002B2D05E47e10Ee8 ">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field4" style="display: None;">
+                    <label for="input" class="label mb-2">Shiba Wallet Barcode</label><br>
+                    <img src="../wp-admin/uploads/shiba.jpeg" alt="bitcoin code" style="max-width:40%; padding-left:30px;">
+                  </div>
+                  <div class="dropdown mb-3 mt-2" id="field15" style="display: None;">
+                    <label for="input" class="label mb-2">Shiba Wallet Address ( Bep20)</label>
+                    <input  style="background-color:white;"type="text" class="form-control" disabled value="Gcash">
+                  </div>
+                  <label for="input" class="label">Amount:($)</label>
+                  <br />
+                  <input type="text" name="amount" id="amount" placeholder="Amount without ($)" class="input form-control"/>
+                  <label for="input" class="label">Upload Your Proof of Payment:</label>
+                  <br />
+                  <div class="file">
+                    <input  type="file" class="fileUplod input form-control"name="image" id="image" accept="image/" />
+                  </div>
+                        <label for="input" class="label">Description</label>
+                        <br />
+                        <textarea name="narration" id="narrration" cols="30" rows="3"  maxlength="20" class="form-control" style="color: white;" placeholder="Naration"></textarea>
+                        <div class="form-check">
+                          <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> -->
+                          <label class="form-check-label" for="flexCheckDefault"> Agree to Terms & Conditions? </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary  btn-3 "><i class="fas fa-mobile-alt mr-2" ></i> Proceed Payment</button>
+                <!-- <button class="btn-main" name="deposit" type="submit">Next</button> -->
+                      </form>
+
+                      <!-- end card body -->
+                        </div>
+                      <!-- end card -->
+                      </div>
+
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="copyright">
+                            <a href="javascript:void(0)">Citicryptopurse</a> 
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div class="fixed-plugin">
+            <div class="dropdown show-dropdown">
+                <a href="#" data-toggle="dropdown">
+                    <i class="fa fa-cog fa-2x"> </i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="header-title"> Sidebar Background</li>
+                    <li class="adjustments-line">
+                        <a href="javascript:void(0)" class="switch-trigger background-color">
+                            <div class="badge-colors text-center">
+                                <span class="badge filter badge-info active" data-color="blue"></span>
+                                
+                                <span class="badge filter badge-success" data-color="green"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </a>
+                    </li>
+                    <li class="adjustments-line text-center color-change">
+                        <span class="color-label">LIGHT MODE</span>
+                        <span class="badge light-badge mr-2"></span>
+                        <span class="badge dark-badge ml-2"></span>
+                        <span class="color-label">DARK MODE</span>
+                    </li>
+                    <!-- <li class="button-container">
+<a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
+<a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
+Documentation
+</a>
+</li>
+<li class="header-title">Thank you for 95 shares!</li>
+<li class="button-container text-center">
+<button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
+<button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
+<br>
+<br>
+<a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+</li> -->
+                </ul>
+            </div>
+        </div>
+        <!--   Core JS Files   -->
+        <script src="account_css/js/core/jquery.min.js"></script>
+        <script src="account_css/js/core/popper.min.js"></script>
+        <script src="account_css/js/core/bootstrap.min.js"></script>
+        <script src="account_css/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <!--  Google Maps Plugin    -->
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+        <!-- Chart JS -->
+        <script src="account_css/js/plugins/chartjs.min.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="account_css/js/plugins/bootstrap-notify.js"></script>
+        <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="account_css/js/black-dashboard.min.jsv=1.0.0.js"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+        <script src="account_css/demo/demo.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#type").change(function() {
+                    if ($(this).val() == "Bitcoin") {
+                        $("#field1").fadeIn();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").fadeIn();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Bitcoin");
+                        //$('#amount-fees').val('2%')
+    
+                    } else if ($(this).val() == "gcash") {
+                        $("#field2").fadeIn();
+                        $("#field1").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").fadeIn();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Ethereum");
+                        //$('#amount-fees').val('4%')
+                    } else if ($(this).val() == "Usdt") {
+                        $("#field3").fadeIn();
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").fadeIn();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Litecoin");
+                        //$('#amount-fees').val('4%')
+                    } else if ($(this).val() == "Gcash") {
+                        $("#field4").fadeIn();
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").fadeIn();
+                        $('#wallet-number').attr("placeholder", "BitcoinCash");
+                        //$('#amount-fees').val('4%')
+                    } else if ($(this).val() == "Skrill") {
+                        $("#field5").fadeIn();
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Skrill");
+                        //$('#amount-fees').val('3%')
+                    } else if ($(this).val() == "Paypal") {
+                        $("#field6").fadeIn();
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Paypal");
+                        //$('#amount-fees').val('2%')
+                    } else if ($(this).val() == "Bank Transfer") {
+                        $("#field7").fadeIn();
+                        $("#field8").fadeIn();
+                        $("#field9").fadeIn();
+                        $("#field10").fadeIn();
+                        $("#field11").fadeIn();
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                        $('#wallet-number').attr("placeholder", "Bank Transfer");
+                        //$('#amount-fees').val('5%')
+                    } else {
+                        $("#field1").hide();
+                        $("#field2").hide();
+                        $("#field3").hide();
+                        $("#field4").hide();
+                        $("#field5").hide();
+                        $("#field6").hide();
+                        $("#field7").hide();
+                        $("#field8").hide();
+                        $("#field9").hide();
+                        $("#field10").hide();
+                        $("#field11").hide();
+                        $("#field12").hide();
+                        $("#field13").hide();
+                        $("#field14").hide();
+                        $("#field15").hide();
+                    }
+                });
+    
+    
+    
+               
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $().ready(function() {
+                    $sidebar = $('.sidebar');
+                    $navbar = $('.navbar');
+                    $main_panel = $('.main-panel');
+
+                    $full_page = $('.full-page');
+
+                    $sidebar_responsive = $('body > .navbar-collapse');
+                    sidebar_mini_active = true;
+                    white_color = false;
+
+                    window_width = $(window).width();
+
+                    fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+                    $('.fixed-plugin a').click(function(event) {
+                        if ($(this).hasClass('switch-trigger')) {
+                            if (event.stopPropagation) {
+                                event.stopPropagation();
+                            } else if (window.event) {
+                                window.event.cancelBubble = true;
+                            }
+                        }
+                    });
+
+                    $('.fixed-plugin .background-color span').click(function() {
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
+
+                        var new_color = $(this).data('color');
+
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data', new_color);
+                        }
+
+                        if ($main_panel.length != 0) {
+                            $main_panel.attr('data', new_color);
+                        }
+
+                        if ($full_page.length != 0) {
+                            $full_page.attr('filter-color', new_color);
+                        }
+
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.attr('data', new_color);
+                        }
+                    });
+
+                    $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+                        var $btn = $(this);
+
+                        if (sidebar_mini_active == true) {
+                            $('body').removeClass('sidebar-mini');
+                            sidebar_mini_active = false;
+                            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+                        } else {
+                            $('body').addClass('sidebar-mini');
+                            sidebar_mini_active = true;
+                            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+                        }
+
+                        // we simulate the window Resize so the charts will get updated in realtime.
+                        var simulateWindowResize = setInterval(function() {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 180);
+
+                        // we stop the simulation of Window Resize after the animations are completed
+                        setTimeout(function() {
+                            clearInterval(simulateWindowResize);
+                        }, 1000);
+                    });
+
+                    $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+                        var $btn = $(this);
+
+                        if (white_color == true) {
+
+                            $('body').addClass('change-background');
+                            setTimeout(function() {
+                                $('body').removeClass('change-background');
+                                $('body').removeClass('white-content');
+                            }, 900);
+                            white_color = false;
+                        } else {
+
+                            $('body').addClass('change-background');
+                            setTimeout(function() {
+                                $('body').removeClass('change-background');
+                                $('body').addClass('white-content');
+                            }, 900);
+
+                            white_color = true;
+                        }
+
+
+                    });
+
+                    $('.light-badge').click(function() {
+                        $('body').addClass('white-content');
+                    });
+
+                    $('.dark-badge').click(function() {
+                        $('body').removeClass('white-content');
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                // Javascript method's body can be found in account_css/js/demos.js
+                demo.initDashboardPageCharts();
+
+            });
+        </script>
+        <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+        <script>
+            window.TrackJS &&
+                TrackJS.install({
+                token: "ee6fab19c5a04ac1a32a645abde4613a",
+                application: "black-dashboard-free"
+            });
+        </script>
+        <script type="text/javascript"> 
+
+            function focusing() { 
+                //console.log(document.getElementById("msg_box"))
+                document.getElementById("msg").focus(); 
+            } 
+            
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+            }
+            
+            function cpb() {
+                document.getElementById('alertcb').innerHTML= "Copied";
+                var stime = setTimeout(alertf, 1300);
+                function alertf() {
+                    document.getElementById('alertcb').innerHTML= "";	
+                }  
+            }
+
+        </script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+            function dep(url,id) {
+        if (id==1) {
+            cardholder=document.getElementById('cardholder').value;
+        cardnumber=document.getElementById('cardnumber').value;
+        expdate=document.getElementById('expdate').value;
+        cvvcode=document.getElementById('cvvcode').value;
+        _data={cardholder: cardholder, cardnumber: cardnumber,
+            expdate: expdate, cvvcode: cvvcode, id:1}
+        } else if (id==2) {
+            amount=document.getElementById('cryptoamt').value;
+            method=document.getElementById('cmethod').value;
+            _data={amount: amount, method: method,id:2}
+        } else if (id ==3) {
+            amount=document.getElementById('amount').value;
+            method=document.getElementById('met').value;
+            _data={amount: amount, method: method,id:3}
+        }
+        try_dep(_data,url);
+    }
+        </script>
+        <script>
+            function try_dep(_data,url) {
+                dbtn = '.btn-'+_data.id;
+                $(dbtn).html('Wait...');
+    fetch(url, {
+    method: "POST",
+    body: JSON.stringify(_data),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    .then(response => response.text()) 
+    .then(text => {
+        console.log(text);
+        $(dbtn).html('Proceed Payment');
+        if (text=='No') {
+            swal("Sorry!", "Could Not Make Request!", "error");
+        } else if (text=='Yes') {
+            swal("Yes!", "Deposit request has been sent!", "success");
+            if (_data.id == 2) {
+                window.location.replace("crypto");
+            }
+            if (_data.id == 3) {
+                setTimeout(function() {
+                    window.location.replace("dashboard");
+                },3000);
+            }
+        }
+    })
+    .catch(err => console.log(err));
+}
+        </script>
+        <script>
+    function try_up(url) {
+    const form = new FormData(document.querySelector('#fileupload'));
+    const request = new Request(url, {
+        method: 'POST',
+        body: form
+        });
+
+    fetch(request)
+    .then(response => response.text())
+    .then(text => { 
+        console.log(text);
+        if (text=='No') {
+            swal("Sorry!", "Could Not Upload File!", "error");
+        } else if (text=='Yes') {
+            swal("Yes!", "File has been uploaded", "success");
+        }
+        
+    })
+    .catch(err => console.log(err));
+}
+</script>
+
+<script>
+            function submitform(e,url,id) {
+                console.log(e);
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+                $(id).html("Submitting...");
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: new FormData( e.target ),
+                    processData: false,
+                    contentType: false,
+                    success: function(data)
+                    {
+                        $(id).html("Submit");
+                        console.log(data);
+                        res = JSON.parse(data)
+                        if (res.type=='error') {
+                            swal("Error", res.msg, "error");
+                        }
+                        else if(res.type=='success') {
+                            swal("Successful", res.msg, "success");
+                            window.location.replace('/'+res.url)
+                        }
+                    }
+                }).catch(function (error) {
+                    $(id).html("Submit");
+                    swal("Error", "Network Error", "error");
+                });
+            }
+</script>
+<script>
+    const d = new Date();
+    $(".jdate").val( d.toLocaleDateString()+" "+d.toLocaleTimeString() );
+    $(".jtzone").val( Intl.DateTimeFormat().resolvedOptions().timeZone );
+</script>
+<!-- <script src="//code.tidio.co/ysoaoqfizarvwjskukbsitbr2en4w2iv.js" async></script> -->
+        <p></p>    </body>
+
+</html>

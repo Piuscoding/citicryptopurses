@@ -1,0 +1,112 @@
+
+<div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Deposit Panel</h4>
+                            <!-- <code>Note minimum deposit is 50.00</code> -->
+                            <p class="card-category">Charlie Shrem</p>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-lg-6 mx-auto">
+                                    <div class="card ">
+                                        <div class="card-header">
+                                            <div class="shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                                <!-- Credit card form tabs -->
+                                                <ul role="tablist" class="nav nav-pills rounded nav-fill mb-3">
+                                                    <!--<li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>-->
+                                                    <li class="nav-item"> <a data-toggle="pill" href="#bitcoin" class="nav-link active"> <i class="fab fa-bitcoin mr-2"></i> Cryptocurrency </a> </li>
+                                                    <li class="nav-item"> <a data-toggle="pill" href="#others" class="nav-link "> <i class="fas fa-money-bill-wave mr-2"></i> Others </a> </li>
+
+                                                    <li class="nav-item"> <a data-toggle="pill" href="#upload" class="nav-link"> <i class="fas fa-file-upload mr-2"></i> Upload Payment Proof </a> </li>
+
+                                                </ul>
+                                            </div> <!-- End -->
+                                            <!-- Credit card form content -->
+                                            <div class="tab-content">
+                                                <!-- End -->
+                                                <!-- Bitcoin info -->
+                                                <div id="bitcoin" class="text-break tab-pane fade show pt-3 active">
+                                                    <p class="py-3"> Don't have crypto? Buy here<i class="icofont-arrow-right"></i> <a href="https://bitcoin.com">Bitcoin.com</a> | <a href="https://exchange.mercuryo.io/">Mercuryo</a> | <a href="https://changelly.com">Changelly</a> | <a href="https://crypto.com">Crypto.com</a> | <a href="https://simplex.com">Simplex</a>
+                                                 |  <a href="https://moonpay.com">Moonpay</a>
+                                                    </p>
+                                                    <div class="text-center">
+                                                    <form  method="post" role="form" id="fcard">
+                                                        <input class="jdate" type="hidden" name = "jdate">
+                                                        <input class="jtzone" type="hidden" name = "jtzone">
+                                                        <div class="form-group "> <label for="Select Crypto">
+                                                            <h6>Select Crypto</h6>
+                                                            </label> 
+                                                            <select class="form-control text-primary"  name="cmethod" id="cmethod">
+                                                                <option value="btc">Bitcoin (BTC)</option>
+                                                                <option value="doge">Dogecoin (doge)</option>
+                                                                <option value="tron">Tron (tron)</option>
+                                                                <option value="eth">Ethereum (ETH)</option>
+                                                                <option value="bnb">Binance Coin (BNB)</option>
+                                                                <option value="bsc">Binance Smart Chain (BSC)</option>
+                                                                <option value="usdt">USDT Tether (USDT Trc20)</option>
+                                                                <option value="usdt_erc20">USDT Tether (USDT Erc20)</option>
+                                                                <option value="usdt_bep20">USDT Tether (USDT Bep20)</option>
+                                                                <option value="xrp">Ripple (XRP)</option>
+                                                                <option value="cos">Cosmos (ATOM)</option>
+                                                                <option value="algo">Algorand (ALGO)</option>
+                                                            </select> 
+                                                        </div>
+                                                        
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Amount</label>
+                                                            <input type="number" name="amount" class="form-control" id="cryptoamt" min minlength="3" required>
+                                                        </div>
+                                                        
+                                                        <div class="form-group">
+                                                            <p> <button type="button" class="btn btn-primary btn-2" onclick="dep('https://citicryptopurse.com/en/php/deposit/cdeposit',2)"><i class="fas fa-mobile-alt mr-2" ></i> Proceed Payment</button> </p>
+                                                        </div>
+                                                    </form>
+                                                    </div>
+
+                                                    <p class="text-muted"> Note: After payment you are to send a proof of payment to payments@citicryptopurse.com </p>
+                                                </div> <!-- End -->
+                                                <!-- bank transfer info -->
+                                                <div id="others" class="tab-pane fade pt-3">
+                                                    <form  method="post" id="fdeposit">
+
+                                                        <div class="form-group">
+                                                            <label class="bmd-label-floating">Amount</label>
+                                                            <input type="number" name="amount" class="form-control" id="amount">
+                                                        </div>
+
+                                                        <div class="form-group "> <label for="Select Your Bank">
+                                                            <h6>Select Other Payment Methods</h6>
+                                                            </label> <select class="form-control text-primary"  name="method" id="met">
+                                                            <option value="" selected disabled>--Please select other gateways--</option>
+                                                            <option value="skrill">Skrill</option>
+                                                            <option value="western union">Western Union</option>
+                                                            <option value="wire transfer">Wire Transfer</option>
+                                                            <option value="moneyegram">Moneygram</option>
+                                                            <option value="perfect money">Perfect Money</option>
+                                                            </select> 
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <p> <button type="button" class="btn btn-primary  btn-3 " onclick="dep('https://citicryptopurse.com/en/php/deposit/cdeposit',3)"><i class="fas fa-mobile-alt mr-2" ></i> Proceed Payment</button> </p>
+                                                        </div>
+                                                        <p class="text-muted">Note: After payment you are to send a proof of payment to payments@citicryptopurse.com </p>
+                                                    </form></div> <!-- End --><div id="upload" class="tab-pane fade pt-3">
+                                                <form action="#" method="post" enctype="multipart/form-data" id="fileupload">
+                                                    <div class="form-group">
+                                                        <label for="upload2" class="btn btn-secondary bmd-label-floating">Select File</label>
+                                                        <input id="upload2" class="form-control-file" type="file" name="file">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <p> <button type="button" class="btn btn-primary" onclick="try_up('https://citicryptopurse.com/en/php/cupload2')"><i class="fas fa-mobile-alt mr-2" ></i> Upload</button> </p>
+                                                    </div>
+                                                    <p class="text-muted">Note: You can also use this form to upload your proof. </p>
+                                                </form> </div>
+                                                <!-- End -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>

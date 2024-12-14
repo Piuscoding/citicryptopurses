@@ -1,0 +1,633 @@
+<%- include('partials/_header'); -%>
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top ">
+	<div class="container-fluid">
+
+		<div class="row justify-content-center">
+			<div class="col-xl-10 d-flex align-items-center justify-content-end">
+
+				<div class="mr-auto">
+					<a href="/" class="logo mr-auto"><img src="assets/img/logo.png" style="width:150px; height:50px;" alt="" class="img-fluid"></a>
+					<div id="google_translate_element"></div>
+				</div>
+				<!-- Uncomment below if you prefer to use an image logo -->
+				<!-- -->
+				<nav class="nav-menu d-none d-lg-block">
+					<ul>
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Signup</a></li>
+						<li><a href="/faqs">FAQ</a></li>
+						<li><a href="#services">Services</a></li>
+						<li class="drop-down"><a href="#">Markets</a>
+							<ul>
+								<li><a href="/forex">Forex</a></li>
+								<li><a href="/stocks">Stocks</a></li>
+								<li><a href="/crypto-trading">Cryptocurrency</a></li>
+							</ul>
+						</li>
+						<li><a href="/copy-trader">Copy Trading</a></li>
+						<li><a href="#contact">Contact</a></li>
+
+					</ul>
+				</nav><!-- .nav-menu -->
+
+			</div>
+		</div>
+	</div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<div class="d-flex flex-column align-items-end px-3 d-inline-block d-md-none" style="position: fixed;top: 50px;right: 20px;z-index: 997;/* width: 100%; */padding: 20px;">
+	<a href="/register" class="btn btn-info w-100 mb-2">Create Account</a>
+	<a href="/login" class="btn btn-outline-success w-100">Login Now</a>
+</div>
+<section id="hero">
+	<div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+		<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+		<div class="carousel-inner" role="listbox">
+
+			<!-- Slide 1 -->
+			<div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+				<div class="carousel-container">
+					<div class="container">
+						<h2 class="animated fadeInDown">Welcome to <img src="assets/img/logo.png" style="width:150px; height:50px;" alt="" class="img-fluid"></h2>
+						<p class="animated fadeInUp"> Choose an investment and discover why millions of users trust Citicryptopurse.</p>
+						<a href="/register" class="btn-get-started animated fadeInUp">Get Started</a>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!-- Slide 3 -->
+			<div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+				<div class="carousel-container">
+					<div class="container">
+						<h2 class="animated fadeInDown">Invest for your future, Create generational wealth.</h2>
+						<p class="animated fadeInUp">Get started</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 2 -->
+			<div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+				<div class="carousel-container">
+					<div class="container">
+						<h2 class="animated fadeInDown">Get started</h2>
+						<p class="animated fadeInUp">with our AUTOMATED TRADING BOTS which allows potential investors to participate in financial markets(Crypto/Forex) by using programmes that executes pre-set rules for entering and exiting trades, we create buy and sell orders, stop loss and take profit...</p>
+						<a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+
+		<a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+
+	</div>
+</section><!-- End Hero -->
+
+<main id="main" class="p-0">
+	<div class="tradingview-widget-container">
+		<div class="tradingview-widget-container__widget"></div>
+		<script type="text/javascript" src="../s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+			{
+				"symbols": [{
+						"proName": "OANDA:SPX500USD",
+						"title": "S&P 500"
+					},
+					{
+						"proName": "OANDA:NAS100USD",
+						"title": "Nasdaq 100"
+					},
+					{
+						"proName": "FX_IDC:EURUSD",
+						"title": "EUR/USD"
+					},
+					{
+						"proName": "BITSTAMP:BTCUSD",
+						"title": "BTC/USD"
+					},
+					{
+						"proName": "BITSTAMP:ETHUSD",
+						"title": "ETH/USD"
+					}
+				],
+				"colorTheme": "light",
+				"isTransparent": false,
+				"displayMode": "adaptive",
+				"locale": "en"
+			}
+
+		</script>
+	</div>
+	
+	<section class="pt-0">
+  
+  <!-- tradingveiw 1 -->
+		<div class="tradingview-widget-container section-bg">
+			<div class="tradingview-widget-container__widget"></div>
+			<script type="text/javascript" src="../s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+			{
+			"colorTheme": "dark",
+			"dateRange": "12m",
+			"showChart": true,
+			"locale": "en",
+			"largeChartUrl": "",
+			"isTransparent": false,
+			"width": "100%",
+			"height": "500",
+			"plotLineColorGrowing": "rgba(237, 80, 46, 1)",
+			"plotLineColorFalling": "rgba(237, 80, 46, 1)",
+			"gridLineColor": "rgba(237, 80, 46, 1)",
+			"scaleFontColor": "rgba(237, 80, 46, 1)",
+			"belowLineFillColorGrowing": "rgba(237, 80, 46, 0.12)",
+			"belowLineFillColorFalling": "rgba(237, 80, 46, 0.12)",
+			"symbolActiveColor": "rgba(237, 80, 46, 0.12)",
+			"tabs": [
+			  {
+				"title": "Indices",
+				"symbols": [
+				  {
+					"s": "OANDA:SPX500USD",
+					"d": "S&P 500"
+				  },
+				  {
+					"s": "OANDA:NAS100USD",
+					"d": "Nasdaq 100"
+				  },
+				  {
+					"s": "FOREXCOM:DJI",
+					"d": "Dow 30"
+				  },
+				  {
+					"s": "INDEX:NKY",
+					"d": "Nikkei 225"
+				  },
+				  {
+					"s": "INDEX:DEU30",
+					"d": "DAX Index"
+				  },
+				  {
+					"s": "OANDA:UK100GBP",
+					"d": "FTSE 100"
+				  }
+				],
+				"originalTitle": "Indices"
+			  },
+			  {
+				"title": "Commodities",
+				"symbols": [
+				  {
+					"s": "CME_MINI:ES1!",
+					"d": "E-Mini S&P"
+				  },
+				  {
+					"s": "CME:6E1!",
+					"d": "Euro"
+				  },
+				  {
+					"s": "COMEX:GC1!",
+					"d": "Gold"
+				  },
+				  {
+					"s": "NYMEX:CL1!",
+					"d": "Crude Oil"
+				  },
+				  {
+					"s": "NYMEX:NG1!",
+					"d": "Natural Gas"
+				  },
+				  {
+					"s": "CBOT:ZC1!",
+					"d": "Corn"
+				  }
+				],
+				"originalTitle": "Commodities"
+			  },
+			  {
+				"title": "Bonds",
+				"symbols": [
+				  {
+					"s": "CME:GE1!",
+					"d": "Eurodollar"
+				  },
+				  {
+					"s": "CBOT:ZB1!",
+					"d": "T-Bond"
+				  },
+				  {
+					"s": "CBOT:UB1!",
+					"d": "Ultra T-Bond"
+				  },
+				  {
+					"s": "EUREX:FGBL1!",
+					"d": "Euro Bund"
+				  },
+				  {
+					"s": "EUREX:FBTP1!",
+					"d": "Euro BTP"
+				  },
+				  {
+					"s": "EUREX:FGBM1!",
+					"d": "Euro BOBL"
+				  }
+				],
+				"originalTitle": "Bonds"
+			  },
+			  {
+				"title": "Forex",
+				"symbols": [
+				  {
+					"s": "FX:EURUSD"
+				  },
+				  {
+					"s": "FX:GBPUSD"
+				  },
+				  {
+					"s": "FX:USDJPY"
+				  },
+				  {
+					"s": "FX:USDCHF"
+				  },
+				  {
+					"s": "FX:AUDUSD"
+				  },
+				  {
+					"s": "FX:USDCAD"
+				  }
+				],
+				"originalTitle": "Forex"
+			  }
+			]
+		  }
+			</script>
+		  </div>
+		  <!-- TradingView Widget END -->
+  
+  <!-- ============================================================================================================================ -->
+<div class="tradingview-widget-container__widget swiper-slide" data-aos="fade-down"></div>
+<script type   ="text/javascript" src="../s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+{
+"width": "100%",
+"height": "400",
+"colorTheme": "dark",
+"currencies": [
+ "EUR",
+ "USD",
+ "JPY",
+ "GBP",
+ "CHF",
+ "AUD",
+ "CAD",
+ "NZD",
+ "CNY"
+],
+"locale": "en"
+}
+</script>
+<!-- TradingView Widget END -->
+	</section>
+
+	<!-- ======= About Section ======= -->
+	<section id="about" class="about pt-0">
+		<div class="container-fluid">
+
+			<div class="row justify-content-center">
+				<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+					<!--<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>-->
+				</div>
+
+				<div class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+					<h3>About Us</h3>
+					<p>Citicryptopurse company was created from the passion of a group of people with similar interests, who have developed a passive income guarantee system for people who are looking for a quick way to multiply their assets. The plan developed by us allows everyone, even basic investors, to achieve a guaranteed profit. Our diversification of funds allows for rational investments in at least 14 industries in which we can invest the investor funds entrusted to us.</p>
+					<p>Citicryptopurse combines the discipline of an automated investment plan with an investment strategy that should make sense for most investors over the long term. More important, the opportunity to start investing with as little as $5 a day with Citicryptopurse should make it easier for many to get started right now. In the end, just starting is the key. As a handful of ninth graders (at least, the ones who were actually listening) can attest, the power of compounding can’t begin until you make the decision to start investing. The sooner, the better.</p>
+
+					<div class="icon-box">
+						<div class="icon"><i class="bx bx-list-check"></i></div>
+						<h4 class="title"><a href="#">Registration</a></h4>
+						<p class="description">Tell us about yourself.</p>
+					</div>
+
+					<div class="icon-box">
+						<div class="icon"><i class="bx bx-selection"></i></div>
+						<h4 class="title"><a href="#">Smart Investment</a></h4>
+						<p class="description">Choose how much to invest starting from the MINIMUM 300 USD.</p>
+					</div>
+
+					<div class="icon-box">
+						<div class="icon"><i class="bx bxs-bank"></i></div>
+						<h4 class="title"><a href="#">Deposit</a></h4>
+						<p class="description">Make your CHOICE of DEPOSIT, you don't have to sit in front of your screen all day doing analysis and monitoring trades to earn.</p>
+					</div>
+
+					<div class="icon-box">
+						<div class="icon"><i class="bx bx-bar-chart-alt"></i></div>
+						<h4 class="title"><a href="#">Profit</a></h4>
+						<p class="description">Sit back and watch your money grow daily regardless of price movements.</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End About Section -->
+
+
+	<!-- ======= Services Section ======= -->
+	<section id="services" class="services">
+		<div class="container-fluid">
+
+			<div class="section-title">
+				<h2>Services</h2>
+				<h3>Check our <span>Services</span></h3>
+				<p>Building trust is important and to ensure you know you are protected, Citicryptopurse has employed regulation and state-of-the-art technology for you to trade with confidence.</p>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-xl-10">
+					<div class="row">
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-medal-fill"></i></div>
+							<h4 class="title"><a href="#">Legal Company</a></h4>
+							<p class="description">Citicryptopurse is a company registered in the UK providing its investment services to the members all around the world.</p>
+						</div>
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-customer-service-2-fill"></i></div>
+							<h4 class="title"><a href="#">Professional Guidance</a></h4>
+							<p class="description">One-on-one support from an experienced investment strategist</p>
+						</div>
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-pie-chart-line"></i></div>
+							<h4 class="title"><a href="#">Segregation Of Funds</a></h4>
+							<p class="description">We offer investment capital appreciation and life insurance benefits.</p>
+						</div>
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-user-add-fill"></i></div>
+							<h4 class="title"><a href="#">Affiliate Benefits</a></h4>
+							<p class="description">Remember to use the referral link. Build your structure and receive a commission whenever someone makes a deposit. Earnings from the affiliate program are immediately available in the account balance. You can withdraw funds at any time.</p>
+						</div>
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-fingerprint-line"></i></div>
+							<h4 class="title"><a href="#">Innovative Platform</a></h4>
+							<p class="description">We're constantly improving our investment platform, trying to make it the best on the market. Our clients make massive investments daily.</p>
+						</div>
+						<div class="col-lg-4 col-md-6 icon-box">
+							<div class="icon"><i class="ri-shield-user-fill"></i></div>
+							<h4 class="title"><a href="#">Risk Management</a></h4>
+							<p class="description">We've developed an extensive range of risk-management features to help you manage investment risk effectively, helping to secure potential profits and minimise losses. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End Services Section -->
+
+	<!-- ======= Cta Section ======= -->
+	<section id="cta" class="cta">
+		<div class="container">
+
+			<div class="text-center">
+				<h3>What am I investing in?</h3>
+				<p> Your Citicryptopurse account is invested in the Gotham Enhanced S&amp;P 500 Index Fund (GSPFX), a mutual fund that buys all 500 stocks in the S&amp;P 500 Index but reweighs them, buying more of the ones we think are cheaper and less of the ones we believe are more expensive.</p>
+				<h3>No monthly fee - how do we do it?</h3>
+				<p> There are no monthly fees to open or maintain an Citicryptopurse account.<br>Gotham Asset Management, LLC ("Gotham") receives a management fee of 0.50% (on an annual basis) for managing the Gotham Enhanced S&amp;P 500 Index Fund (the "Fund").</p>
+				<a class="cta-btn" href="/register">Get Started Now</a>
+			</div>
+
+		</div>
+		
+	<!-- End Cta Section -->
+	<div class="container aos-init aos-animate" data-aos="zoom-in">
+	
+	<section class="row py-0 px-0">
+		<section class=" col-md-6 col-lg-6">
+			<img class="img-fluid" src="license.jpg">   
+		</section>
+	<section class=" col-md-6 col-lg-6">
+	<div class="text-center">
+	  <h3>Objective</h3>
+	  <p> Since the founding of Citicryptopurse, our principles have been absolute transparency, dedication to our clients, as well as a complete understanding of the features of our profile market and the expectations of different types of investors.</p>
+	  <a class="btn btn-primary" href="/register">Get Started</a>
+	</div>
+	</section>
+	</section>
+	
+	
+  </div>
+	</section>
+
+
+
+
+	<!-- ======= Testimonials Section ======= -->
+	<section id="testimonials" class="testimonials bg-dark">
+		<div class="container-fluid">
+
+			<div class="section-title">
+				<h2>Testimonials</h2>
+				<h3 class="text-light">What They Are Saying<span> About Us</span></h3>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-xl-10">
+
+					<div class="row">
+																				<div class="col-lg-6">
+							<div class="testimonial-item mt-4">
+								<video width="320" height="240" controls>
+									<source src="video7.mp4" type="video/mp4">
+									<source src="video7.mp4" type="video/ogg">
+								  </video>
+								<!-- <img src="uploads/testimonials/image1.html" class="testimonial-img" alt=""> -->
+								<h3>1</h3>
+								<p>
+									<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+									Just the platform i want. Safe investment policy.                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+								</p>
+							</div>
+						</div><!-- End testimonial-item -->
+																				<div class="col-lg-6">
+							<div class="testimonial-item mt-4">
+								<video width="320" height="240" controls></video>
+									<source src="video4.mp4" type="video/mp4">
+									<source src="video4.mp4" type="video/ogg">
+								  </video>
+								<!-- <img src="assets/img/testimonials/002.jpg" class="testimonial-img" alt=""> -->
+								<h3>3</h3>
+								<p>
+									<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+									I am very satisfied with this platform, both from an ease of use and a technical perspective.                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+								</p>
+							</div>
+						</div><!-- End testimonial-item -->
+													<div class="clearfix"></div>
+																				<div class="col-lg-6">
+							<div class="testimonial-item mt-4">
+								<video width="320" height="240" controls></video>
+									<source src="video3.mp4" type="video/mp4">
+									<source src="video3.mp4" type="video/ogg">
+								  </video>
+								<!-- <img src="assets/img/testimonials/001.jpg" class="testimonial-img" alt=""> -->
+								<h3>2</h3>
+								<p>
+									<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+									I was so much concerned about having consistent communication with the company about my investment because I knew I had to know what&#039;s going on aside from the money in my account. 5 Star support.                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+								</p>
+							</div>
+						</div><!-- End testimonial-item -->
+																				<div class="col-lg-6">
+							<div class="testimonial-item mt-4">
+								<video width="320" height="240" controls>
+									<source src="video1.mp4" type="video/mp4">
+									<source src="video1.mp4" type="video/ogg">
+								  </video>
+								<!-- <img src="assets/img/testimonials/004.jpg" class="testimonial-img" alt=""> -->
+								<h3>4</h3>
+								<p>
+									<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+									Before i struggled to maintain a good standard of living but when i found this company my life has changed for the better.                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+								</p>
+							</div>
+						</div><!-- End testimonial-item -->
+													
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End Testimonials Section -->
+
+
+
+
+	<section id="counts" class="counts section-bg">
+		<div class="container-fluid">
+
+			<div class="row counters">
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-bitcoin"></span>
+				</div>
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-skrill"></span>
+				</div>
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-paypal"></span>
+				</div>
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-bank-transfer"></span>
+				</div>
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-mastercard"></span>
+				</div>
+
+				<div class="col-lg-2 col-6 text-center">
+					<span class="pf pf-visa"></span>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<!-- ======= Contact Section ======= -->
+	<section id="contact" class="contact section-bg">
+		<div class="container-fluid">
+
+			<div class="section-title">
+				<h2>Contact</h2>
+				<h3>Get In Touch With <span>Us</span></h3>
+				<p>We are always available to take your queries</p>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-xl-10">
+					<div class="row">
+
+						<div class="col-lg-6">
+
+							<div class="row justify-content-center">
+
+								<div class="col-md-12 info d-flex flex-column align-items-stretch">
+									<i class="bx bx-map"></i>
+									<h4>Address</h4>
+									<p>San Francisco, USA</p>
+									<h4>Phone Number</h4>
+									<p>+1</p>
+								</div>
+								<!--<div class="col-md-6 info d-flex flex-column align-items-stretch">
+				<i class="bx bx-phone"></i>
+				<h4>Call Us</h4>
+				<p>+1 (682) 710-2851</p>
+			  </div>-->
+								<div class="col-md-12 info d-flex flex-column align-items-stretch">
+									<i class="bx bx-envelope"></i>
+									<h4>Email Us</h4>
+									<p>support@citicryptopurse.com</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col-lg-6">
+							<form action="/contact" method="get" role="form" class="php-email-form">
+								<div class="form-row">
+									<div class="col-md-6 form-group">
+										<label for="name">Your Name</label>
+										<input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+										<div class="validate"></div>
+									</div>
+									<div class="col-md-6 form-group">
+										<label for="email">Your Email</label>
+										<input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+										<div class="validate"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="subject">Subject</label>
+									<input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+									<div class="validate"></div>
+								</div>
+								<div class="form-group">
+									<label for="message">Message</label>
+									<textarea class="form-control" name="message" rows="8" data-rule="required" data-msg="Please write something for us"></textarea>
+									<div class="validate"></div>
+								</div>
+								<div class="mb-3">
+									<div class="loading">Loading</div>
+									<div class="error-message"></div>
+									<div class="sent-message">Your message has been sent. Thank you!</div>
+								</div>
+								<div class="text-center"><button type="submit">Send Message</button></div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<%- include('partials/_footer'); -%>
