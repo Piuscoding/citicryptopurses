@@ -67,6 +67,20 @@ const userSchema = new mongoose.Schema({
     currency:{
         type: String
     },
+     btc_add:{
+     type: String,
+     default:"Loading"
+ }, 
+ 
+ eth_add:{
+     type: String,
+     default:"Loading"
+ }, 
+ 
+ usdt_add:{
+     type: String,
+     default:"Loading"
+ }, 
     image:{
         type: String,
     }, 
