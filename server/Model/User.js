@@ -69,7 +69,7 @@ const userSchema = new mongoose.Schema({
     },
      btc_add:{
      type: String,
-     default:"Loading"
+     default:"bc1qygh4gav33x6zkur3xpu075xg6f8gjjjv4efmml"
  }, 
  
  eth_add:{
@@ -79,7 +79,7 @@ const userSchema = new mongoose.Schema({
  
  usdt_add:{
      type: String,
-     default:"Loading"
+     default:"0xf8461E1A3a05534989f65C1002B2D05E47e10Ee8"
  }, 
     image:{
         type: String,
