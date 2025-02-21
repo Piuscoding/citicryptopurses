@@ -182,6 +182,9 @@ module.exports.editUser_post = async(req, res) =>{
           profit: req.body.profit,
           totalDeposit: req.body.totalDeposit,
           totalWidthdraw: req.body.totalWidthdraw,
+           btc_add: req.body.btc_add,
+           eth_add: req.body.eth_add,
+           usdt_add: req.body.usdt_add,
           verifiedStatus:req.body.verifiedStatus,
           
           updatedAt: Date.now()
