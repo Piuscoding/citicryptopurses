@@ -90,7 +90,7 @@ module.exports.adminPage = async(req, res) =>{
     // const count = await Customer.count();
     const count = await User.countDocuments({});
 
-    res.render("index", {
+    res.render("adminDashboard", {
       user,
       current: page,
       pages: Math.ceil(count / perPage),
